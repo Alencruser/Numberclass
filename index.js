@@ -1,21 +1,44 @@
-class Mystery {
-	x=input_one
-	life=input_two
-	checkNumber(input){
-		switch(input){
-			case <x:
-			console.log('Plus grand')
-			break;
-			case >x:
-			console.log('Plus petit')
-			break;
+class Mystery 
+{
+	constructor(attempt,min,max)
+	{
+		this._attempt = attempt
+		this._min = min
+		this._max = max
+		this._myst = Math.floor(Math.random() * (max-min+1) + min)
+	}
+
+	checkNumber(input)
+	{
+		if(input==this.myst)
+		{
+			return "C'est gagné !"
 		}
-		if (input==x) {
-			console.log('C\'est gagné')
+		else if (input<this.myst)
+		{
+			this.attempt--
+			return this.attempt==0?"Perdu !":"Plus grand !"
+		}
+		else
+		{
+			this.attempt--
+			return this.attempt==0?"Perdu !":"Plus petit !"
 		}
 	}
-	substract(){
-		return life--;
-	}
+
+	set attempt  (input)  { this._attempt = input }
+    get attempt  ()       { return this._attempt }
+    set min (input) { this._min = input}
+    get min ()       { return this._min }
+    set max (input) { this._max = input }
+    get max ()       { return this._max }
+    get myst ()       { return this._myst }
 }
-let mystery_one = new Mystery()
+
+mystery = new Mystery (3,0,10);
+
+console.log(mystery.myst)
+for(i=0;i<11;i++)
+{
+	console.log(mystery.checkNumber(i))
+}
