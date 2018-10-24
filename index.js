@@ -23,7 +23,6 @@ class Mystery
 		{
 			this.attempt--
 			return this.attempt==0?"Perdu !":"Plus petit !"
-		}
 	}
 
 	set attempt  (input)  { this._attempt = input }
