@@ -9,9 +9,9 @@ class Mystery {
 			case >x:
 			console.log('Plus petit')
 			break;
-		}
-		if (input==x) {
+			case ==x:
 			console.log('C\'est gagné')
+			break;
 		}
 	}
 	substract(){
