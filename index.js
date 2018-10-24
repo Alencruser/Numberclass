@@ -2,14 +2,14 @@ class Mystery {
 	x=input_one
 	life=input_two
 	checkNumber(input){
-		switch(input){
-			case <x:
+		switch(true){
+			case input<x:
 			console.log('Plus grand')
 			break;
-			case >x:
+			case input>x:
 			console.log('Plus petit')
 			break;
-			case ==x:
+			default:
 			console.log('C\'est gagné')
 			break;
 		}
