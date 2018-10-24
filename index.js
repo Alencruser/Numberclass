@@ -1,12 +1,14 @@
 class Mystery {
-	x=input_one
-	life=input_two
+	constructor(life,max) {
+		this.life = life;
+		this.answer = Math.floor(Math.random() * Math.floor(max));
+	}
 	checkNumber(input){
 		switch(true){
-			case input<x:
+			case input<this.answer:
 			console.log('Plus grand')
 			break;
-			case input>x:
+			case input>this.answer:
 			console.log('Plus petit')
 			break;
 			default:
@@ -18,4 +20,4 @@ class Mystery {
 		return life--;
 	}
 }
-let mystery_one = new Mystery()
+let mystery_one = new Mystery(3,10)
